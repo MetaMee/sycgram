@@ -1,6 +1,6 @@
 name: Build Docker Image
 
-# 当 push 到 main 分支，或者创建以 v 开头的 tag 时触发，可根据需求修改
+
 on:
   push:
     tags:
@@ -14,7 +14,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
-    # 这里用于定义 GITHUB_TOKEN 的权限
+   
     permissions:
       packages: write
       contents: read
@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # 缓存 Docker 镜像以加速构建
+      
       - name: Cache Docker layers
         uses: actions/cache@v2
         with:
@@ -31,7 +31,7 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: ${{ runner.os }}-buildx-
 
-      # 配置 QEMU 和 buildx 用于多架构镜像的构建
+     
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -47,8 +47,7 @@ jobs:
           echo "Flags:     ${{ steps.buildx.outputs.flags }}"
           echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
 
-      # 登录到 GitHub Packages 容器仓库
-      # 注意 secrets.GITHUB_TOKEN 不需要手动添加，直接就可以用
+     
       - name: Log in to the Container registry
         uses: docker/login-action@v1
         with:
@@ -56,14 +55,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # 根据输入自动生成 tag 和 label 等数据，说明见下
+      
       - name: Extract metadata for Docker
         id: meta
         uses: docker/metadata-action@v3
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE }}
 
-      # 构建并上传
+      
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
