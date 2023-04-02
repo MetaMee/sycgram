@@ -6,3 +6,7 @@ on:
   push:
     tags:
       - v*
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE: metamee/sycgram # prinsss/ga-hit-counter
