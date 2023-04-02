@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+name: Build Docker Image
+
+# 当 push 到 main 分支，或者创建以 v 开头的 tag 时触发，可根据需求修改
+on:
+  push:
+    tags:
+      - v*
