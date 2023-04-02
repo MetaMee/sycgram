@@ -10,3 +10,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE: metamee/sycgram # prinsss/ga-hit-counter
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
