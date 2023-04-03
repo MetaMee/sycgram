@@ -9,7 +9,7 @@
 
 help:
   all_prefixes: "-"
-  cmd: help
+  cmd: h
   format: -help <command>
   usage: 指令列表
 
@@ -19,7 +19,7 @@ note:
   usage: 回复一条消息，根据序号保存/删除该消息文本
 
 dme:
-  cmd: dme
+  cmd: d
   format: -dme <数量>
   usage: 直接使用。批量删除消息, 范围：1 ~ 1500，默认：1
 
@@ -54,7 +54,7 @@ dc:
   usage: 回复一条消息，或者直接使用。查看目标消息或当前对话的DC区
 
 pingdc:
-  cmd: pingdc
+  cmd: pdc
   format: -pingdc
   usage: 测试与各个DC的延时
 
@@ -64,12 +64,12 @@ ex:
   usage: 汇率转换
 
 google:
-  cmd: google
+  cmd: g
   format: -google <无|搜索内容>
   usage: 回复一条消息，或直接使用
 
 speedtest:
-  cmd: speedtest
+  cmd: c
   format: -speedtest <无|节点ID|list|update>
   usage: 服务器本地网络测速
 
@@ -81,7 +81,7 @@ sticker:
     回复使用时，可以指定emoji，不指定则使用默认emoji
 
 trace:
-  cmd: trace
+  cmd: t
   format: -trace <emoji|clear|list>
   usage: 回复一条消息，当目标消息的主人发消息时，自动丢<emoji>，默认：💩。直接使用，清除所有trace目标（或展示trace名单）
 
@@ -102,7 +102,7 @@ sh:
   usage: 直接使用
 
 sysinfo:
-  cmd: sysinfo
+  cmd: x
   format: -sysinfo
   usage: 直接使用，查看系统信息
 
@@ -127,22 +127,22 @@ unarchive:
   usage: 撤销归档当前对话
 
 restart:
-  cmd: restart
+  cmd: cq
   format: -restart
   usage: 重启sycgram
 
 update:
-  cmd: update
+  cmd: gx
   format: -update <无|force>
   usage: 更新配置文件和sycgram到主分支的最新版本
 
 prefix:
-  cmd: prefix
+  cmd: xg
   format: -prefix <符号|reset>
   usage: 修改所有指令的前缀。当参数为reset时，恢复command.yml的所有默认参数
 
 alias:
-  cmd: alias
+  cmd: zl
   format: -alias <set> <source> <to> or -alias <reset> <source> or -alias <list>
   usage: 修改指令别名
 
@@ -162,7 +162,7 @@ ip:
   usage: 查询IP地址或域名的信息
 
 ipcheck:
-  cmd: ipcheck
+  cmd: ipc
   format: -ipcheck <IP|域名> <端口|无>
   usage: 无端口参数时，查询IP或域名是否被阻断；有则查询端口是否开启
 
@@ -172,7 +172,7 @@ bc:
   usage: 加密货币转换 -bc 1000 jpy usd
 
 mtts:
-  cmd: mtts
+  cmd: yy
   format: -mtts text
   usage: tts AI 语音转换,-mtts list zh 模糊搜索列出含有zh字符的语音模型, -mtts set zh-CN-YunfengNeural 使用zh-CN-YunfengNeural语音模型
 bin:
